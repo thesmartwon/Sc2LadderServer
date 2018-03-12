@@ -23,14 +23,20 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#ifdef _WIN32
 #include <Windows.h>
+#endif
 #include <future>
 #include <chrono>
-#include <curl\curl.h>
+#include "curl/curl.h"
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sstream>   
+#ifdef _WIN32
 #include "types.h"
+#else
+#include "linux/types.h"
+#endif
 #include "LadderConfig.h"
 #include "LadderManager.h"
 #include "MatchupList.h"
